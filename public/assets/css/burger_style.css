@@ -1,0 +1,53 @@
+
+h1 {
+	color: #8d0000;
+
+}
+
+#eatHead{
+	color: #8d0000;
+}
+
+#uneatHead{
+	color: #003c00;
+
+}
+h2 {
+	color: #003c00;
+}
+.eaten .uneaten{
+	float: left;
+	padding-top: 5px;
+
+}
+
+.row{
+	padding: 25px;
+}
+
+ul {
+	font: 17px arial, sans-serif;
+
+}
+.btn-lg{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 5px;
+}
+.page-header{
+		margin-top: 10px;
+		padding-top: 15px;
+		padding-left: 25px;
+ 		padding-right; 25px;
+ 		padding-bottom: 10px;
+	}
+.container-fluid{ 
+	padding: 25px;
+	margin: 50px;
+	background-color: white;
+
+ }
+ body{
+ 	
+ 	background-color: #FAF1EA;
+ }

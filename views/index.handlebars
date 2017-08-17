@@ -1,0 +1,75 @@
+<div class = "container-fluid">
+  <div class="page-header text-center">
+    <h1>Eat Da Burger</h1>
+    <h2> Order your favorite combo and devour it in this app.</h2>
+    <p class="lead"> Click the order button and add your burger to the menu. Then click the devour button to eat it. Click delete when you're all done. </p>
+  </div>
+
+  <div class="row">
+  <div class="col-xs-3 text-center"></div>
+    <div class="col-xs-6 text-center form-group">
+      <form method="POST" action="/" class="button size">
+        <input type="hidden" name="devoured" value="0">
+         <textarea type="text"  class="form-control" name="burger">You can place your order here</textarea>
+         <button type="submit" class="btn btn-primary btn-lg"> Order Da Burger!</button>
+      </form>
+    </div>
+  <div class="row">
+      <div class="col-xs-6 text-center
+      ">
+        <div class="img-circle">
+          <img src="./assets/img/EatDaBurger1.png">
+        </div>
+      </div>
+
+      <div class="col-xs-6 text-center
+      ">
+        <div class="img-circle">
+          <img src="./assets/img/EatDaBurger2.png">
+        </div>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-xs-6 text-center uneaten">
+        <h3 id="uneatHead">Click Devour To Eat Da Burger! </h3>
+          <ul class="list-unstyled">
+            {{#each burger}}
+              {{#unless devoured}}
+                <li>
+                  <p>
+                    {{this.id}}. {{this.burger_name}}
+
+                    <form action="/{{this.id}}?_method=PUT" method="POST">
+                      <input type="hidden" name="id" value="{{this.id}}">
+                      <button type="submit" class="btn btn-success btn-sm">Devour</button>
+                    </form>
+                  </p>
+                </li>
+              {{/unless}}
+            {{/each}}
+          </ul>
+        </div>
+        
+        <div class="col-xs-6 text-center eaten">
+          <h3 id="eatHead">Click Delete If You Ate It All! </h3>
+          <ul class="list-unstyled">
+            {{#each burger}}
+              {{#if devoured}}
+                <li>
+                  <p>
+                    {{this.id}}. {{this.burger_name}}
+
+                    <form action="/{{this.id}}?_method=DELETE" method="POST">
+                      <input type="hidden" name="id" value="{{this.id}}">
+                      <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                    </form>
+                  </p>
+                </li>
+              {{/if}}
+            {{/each}}
+          </ul>
+        </div>
+  </div>
+</div>
+
