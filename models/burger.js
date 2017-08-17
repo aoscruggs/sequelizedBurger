@@ -23,10 +23,10 @@ var Burger = sequelize.define("burger",{
 });
 
 Burger.sync({force: true}).then(function() {
-	return burger.create({
+	return Burger.create({
 	burger_name: "Double Cheese Burger",
-	devoured,
-	id
+	devoured: "False",
+	id: 1
 	});
 
 });
